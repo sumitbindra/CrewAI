@@ -16,8 +16,8 @@ class CustomTasks:
     
             Make sure to use the most recent data as possible.
     
-            How much do you have to raise: {var1}
-            How much time do you have: {var2}
+            How much do you have to raise (dollars): {var1}
+            How much time do you have (weeks): {var2}
         """
             ),
             agent=agent,
