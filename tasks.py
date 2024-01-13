@@ -23,7 +23,7 @@ class CustomTasks:
             agent=agent,
         )
 
-    def task_1_name(self, agent):
+    def task_2_name(self, agent):
         return Task(
             description=dedent(
                 f"""

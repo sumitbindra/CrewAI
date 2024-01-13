@@ -1,4 +1,5 @@
 from crewai import Agent
+from textwrap import dedent
 from langchain.llms import OpenAI
 from langchain_openai import ChatOpenAI
 
@@ -11,8 +12,8 @@ class CustomAgents:
     def agent_1_name(self):
         return Agent(
             role="Define agent 1 role here",
-            goal="Define agent 1 goal here",
-            backstory="Define agent 1 backstory here",
+            backstory=dedent(f"""Define agent 1 backstory here"""),
+            goal=dedent(f"""Define agent 1 goal here"""),
             # tools=[tool_1, tool_2],
             allow_delegation=False,
             verbose=True,
@@ -22,8 +23,8 @@ class CustomAgents:
     def agent_2_name(self):
         return Agent(
             role="Define agent 2 role here",
-            goal="Define agent 2 goal here",
-            backstory="Define agent 2 backstory here",
+            backstory=dedent(f"""Define agent 2 backstory here"""),
+            goal=dedent(f"""Define agent 2 goal here"""),
             # tools=[tool_1, tool_2],
             allow_delegation=False,
             verbose=True,
