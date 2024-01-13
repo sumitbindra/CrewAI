@@ -10,28 +10,44 @@ class CustomTasks:
         return Task(
             description=dedent(
                 f"""
-            Do something as part of task 1
+            For this task you are to come up with innovative ideas for a fundraising task for a in person toastmasters conference.
             
             {self.__tip_section()}
     
             Make sure to use the most recent data as possible.
     
-            Use this variable: {var1}
-            And also this variable: {var2}
+            How much do you have to raise: {var1}
+            How much time do you have: {var2}
         """
             ),
             agent=agent,
         )
 
-    def task_1_name(self, agent):
+    def task_2_name(self, agent, var1, var2):
         return Task(
             description=dedent(
                 f"""
-            Take the input from task 1 and do something with it.
+            For this task you take the list from the previous task and prune it down to a list of top 3 strategies that are most likely to 
+            work. You must also provide a rationale for why you chose the top 3 strategies.
                                        
             {self.__tip_section()}
 
-            Make sure to do something else.
+            The final output must be the top three strategies that will accomplish the goal to raise {var1} dollars in {var2} weeks.
+        """
+            ),
+            agent=agent,
+        )
+
+    def task_3_name(self, agent, var1, var2):
+        return Task(
+            description=dedent(
+                f"""
+            For this task you take the input from the previous task and convert it to a plan that can be executed by a team of three 
+            on the ground.
+                                       
+            {self.__tip_section()}
+
+            The final output must be a comprehensive plan to accomplish the goal to raise {var1} dollars in {var2} weeks.
         """
             ),
             agent=agent,

@@ -29,6 +29,7 @@ class CustomCrew:
 
         custom_agent_1 = agents.agent_1_name()
         custom_agent_2 = agents.agent_2_name()
+        custom_agent_3 = agents.agent_3_name()
 
         custom_task_1 = tasks.task_1_name(
             custom_agent_1,
@@ -38,11 +39,19 @@ class CustomCrew:
 
         custom_task_2 = tasks.task_2_name(
             custom_agent_2,
+            self.var1,
+            self.var2,
+        )
+
+        custom_task_3 = tasks.task_3_name(
+            custom_agent_3,
+            self.var1,
+            self.var2,
         )
 
         crew = Crew(
-            agents=[custom_agent_1, custom_agent_2],
-            tasks=[custom_task_1, custom_task_2],
+            agents=[custom_agent_1, custom_agent_2, custom_agent_3],
+            tasks=[custom_task_1, custom_task_2, custom_task_3],
             verbose=True,
         )
 
@@ -53,8 +62,8 @@ class CustomCrew:
 if __name__ == "__main__":
     print("## Welcome to Crew AI Template")
     print("-------------------------------")
-    var1 = input(dedent("""Enter variable 1: """))
-    var2 = input(dedent("""Enter variable 2: """))
+    var1 = input(dedent("""Enter dollar amount: """))
+    var2 = input(dedent("""Enter weeks to raise: """))
 
     custom_crew = CustomCrew(var1, var2)
     result = custom_crew.run()
