@@ -1,13 +1,17 @@
 from crewai import Agent
 from textwrap import dedent
-from langchain.llms import OpenAI
+from langchain.llms import OpenAI, Ollama
 from langchain_openai import ChatOpenAI
 
 
+# This is an example of how to define custom agents.
+# You can define as many agents as you want.
+# You can also define custom tasks in tasks.py
 class CustomAgents:
     def __init__(self):
         self.OpenAIGPT35 = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.7)
         self.OpenAIGPT4 = ChatOpenAI(model_name="gpt-4", temperature=0.7)
+        self.Ollama = Ollama(model="openhermes")
 
     def agent_1_name(self):
         return Agent(
